@@ -8,6 +8,7 @@ gapi.client.init({
     console.log('success...');
     return gapi.client.sheets.spreadsheets.values.get({
         spreadsheetId: '15Wpn0Ng-THDo-B7FJLt0Co9vYGwkMZHE6HgJ0MkJwqo',
+        range: 'A1A1'
     }).then((response) => {
         var result = response.result;
         var numRows = result.values ? result.values.length : 0;
