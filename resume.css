@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
+
+:root {
+  --font-size: 6.5mm;
+  --body-color: #4C3327;
+  --first-color: #BD3632;
+  --second-color: #4C3327;
+  --font: 'Rubik';
+  --line-height: normal;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+  -webkit-print-color-adjust: exact;
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+}
+
+.main {
+  font-family: var(--font);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--body-color);
+  padding: 20mm 15mm;
+  background: url('./bg.svg') no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.resume-name {
+  font-weight: 500;
+  font-size: 2em;
+  color: var(--first-color);
+}
+
+.resume-title {
+  margin-top: 5mm;
+  font-size: 1.1em;
+  line-height: 0.5;
+}
+
+.resume-contacts {
+  margin-top: 5mm;
+  font-size: 0.75em;
+}
+
+.resume-body {
+  margin-top: 8mm;
+}
+
+.section-title {
+  border-bottom: 2px solid var(--body-color);
+  font-size: 1.3em;
+  font-weight: 500;
+  color: var(--first-color);
+}
+
+.sub-section  {
+  padding-bottom: 5mm;
+  margin-bottom: 5mm;
+  border-bottom: 1px dashed var(--body-color);
+}
+
+.sub-title-1 {
+  margin-top: 3mm;
+  font-size: 1.1em;
+}
+
+.sub-title-2 {
+  font-size: 1em;
+  color: var(--second-color);
+}
+
+.sub-title-date, .sub-title-location {
+  font-size: 0.8em;
+}
+
+.section-details {
+  margin-top: 3mm;
+  font-size: 0.8em;
+}
+
+.tech-item, .tech-item-bracket {
+  font-size: 1em;
+  padding: 1mm 2mm;
+}
+
+.tech-item {
+  border-bottom: 1px solid #000;
+}
+
+.color-body {
+  color: var(--body-color);
+}
+
+.color-1 {
+  color: var(--first-color);
+}
+
+.color-2 {
+  color: var(--second-color);
+}
+
+.left .section {
+  margin-right: 2mm;
+}
+.right .section {
+  margin-left: 2mm;
+}
