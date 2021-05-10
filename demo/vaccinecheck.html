@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <div style="color: red;" id="notify"></div>
   <span>District: </span><select id="districts"></select>
   <button id="start" onclick=window.onstartclick>Start</button>
 
@@ -26,6 +27,12 @@
   <script>
     var pollerid = 0;
     var select = document.querySelector('#districts');
+
+    Notification.requestPermission().then(function (permission) {
+      if(permission !== 'granted') {
+        document.querySelector('#notify').innerHTML = "Notification permission is not allowed"
+      }
+    });
 
     function getDate() {
       var today = new Date();
@@ -70,6 +77,9 @@
                 }
               });
               if(is18plus) {
+                // if(available > 0) {
+                  new Notification('Available at '+center.name);
+                // }
                 centerData += '<tr><td>' + center.name + '</td><td>' + available + '</td></tr>';
               }
             });
