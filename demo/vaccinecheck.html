@@ -14,7 +14,7 @@
   <button id="start" onclick=window.onstartclick>Start</button>
 
   <div><span>Last checked:</span><span id="lastchecked">Never</span></div>
-  <div>Centers in Kolhapur for 18+</div>
+  <div>Centers for 18+</div>
   <table border="1" cellspacing="0" cellpadding="8px">
     <thead>
       <td>Center Name</td>
@@ -77,9 +77,9 @@
                 }
               });
               if(is18plus) {
-                // if(available > 0) {
-                  new Notification('Available at '+center.name);
-                // }
+                if(available > 0) {
+                  new Notification('Vaccine available at '+center.name);
+                }
                 centerData += '<tr><td>' + center.name + '</td><td>' + available + '</td></tr>';
               }
             });
