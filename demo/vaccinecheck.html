@@ -27,12 +27,18 @@
   <script>
     var pollerid = 0;
     var select = document.querySelector('#districts');
+    var notify = false;
 
-    Notification.requestPermission().then(function (permission) {
-      if(permission !== 'granted') {
-        document.querySelector('#notify').innerHTML = "Notification permission is not allowed"
-      }
-    });
+    try {
+      Notification.requestPermission().then(function (permission) {
+        if(permission !== 'granted') {
+          document.querySelector('#notify').innerHTML = "Notification permission is not allowed"
+        }
+        notify = true;
+      });
+    } catch {
+      notify = false;
+    }
 
     function getDate() {
       var today = new Date();
@@ -78,7 +84,7 @@
               });
               if(is18plus) {
                 if(available > 0) {
-                  new Notification('Vaccine available at '+center.name);
+                  notify && new Notification('Vaccine available at '+center.name);
                 }
                 centerData += '<tr><td>' + center.name + '</td><td>' + available + '</td></tr>';
               }
