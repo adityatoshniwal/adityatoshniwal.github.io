@@ -27,7 +27,7 @@
   font-size: var(--font-size);
   line-height: var(--line-height);
   color: var(--body-color);
-  padding: 20mm 15mm;
+  padding: 5mm 10mm;
   background: url('./bg.svg') no-repeat;
   position: absolute;
   top: 0;
@@ -110,6 +110,12 @@
   color: var(--second-color);
 }
 
+.left {
+  padding-left: 0px;
+}
+.right {
+  padding-right: 0px;
+}
 .left .section {
   margin-right: 2mm;
 }
